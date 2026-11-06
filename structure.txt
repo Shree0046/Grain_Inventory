@@ -1,0 +1,20 @@
+grain_inventory_system/
+├── backend_api/                  # Runs on the main server machine
+│   ├── app.py                    # Flask server, returns only JSON (login, roles, billing, stock, analytics, logs)
+│   ├── db.py                     # MySQL connection pool and query helpers
+│   └── seed_demo.py              # Optional: creates 60 days of sample bills for analytics
+│
+├── frontend_ui/                  # Runs on the cashier and owner PCs
+│   ├── main.py                   # Streamlit entry point: login and role-based menu
+│   ├── api_client.py             # All API calls, short caching, friendly error handling
+│   ├── ui.py                     # Shared styling, receipt preview, page guards, error display, sidebar
+│   ├── bill_pdf.py               # Builds the downloadable PDF bill
+│   └── pages/
+│       ├── 1_Cashier_POS.py      # Billing counter (owner and cashier can use it)
+│       └── 2_Owner_Dashboard.py  # Overview, Sales Report, Stock, Bills, Manage, History (owner only)
+│
+├── grain_inventery.sql           # Complete database schema and starter data
+├── requirements.txt              # Flask, mysql-connector-python, python-dotenv, waitress,
+│                                 # streamlit, requests, pandas, plotly, reportlab
+├── .env                          # Copy to .env and set the database password, API address, shop name
+└── README.md                     # Setup steps

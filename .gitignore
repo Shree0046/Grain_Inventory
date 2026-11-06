@@ -1,0 +1,22 @@
+# secrets - never upload these
+.env
+.secret_key
+
+# logs and generated files
+logs/
+*.log
+__pycache__/
+*.pyc
+
+# virtual environment
+venv/
+.venv/
+
+# editor / system
+.vscode/
+.DS_Store
+
+
+
+
+

@@ -1,0 +1,10 @@
+# Create Vurtual Environment
+python -m venv grain
+
+#Activate Virtual Environment
+grain\Scripts\activate.bat
+
+
+
+#Run in /backend_api
+uvicorn app:app --host 0.0.0.0 --port 5000 --reload
